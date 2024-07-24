@@ -4,19 +4,65 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    TimingManager theTimingManager;
+    public bool movable = false;
+    public float moveDistance = 0.5f;
+    [SerializeField] private GameObject Enemy = null;
+    EnemyMovement enemyCtr = null;
 
-    void Start()
+    private void Start()
     {
-        theTimingManager = FindObjectOfType<TimingManager>();
+        enemyCtr = Enemy.GetComponent<EnemyMovement>();
     }
-    // Update is called once per frame
-    void Update()
+
+
+
+    public void MoveUp()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (movable)
         {
-            //판정
-            theTimingManager.CheckTiming();
+            Vector3 pos = this.transform.position;
+            pos.y += moveDistance;
+            this.transform.position = pos;
+            movable = false;
         }
+        enemyCtr.EnemyMove();
     }
+
+
+    public void MoveDown()
+    {
+        if (movable)
+        {
+            Vector3 pos = this.transform.position;
+            pos.y -= moveDistance;
+            this.transform.position = pos;
+            movable = false;
+        }
+        enemyCtr.EnemyMove();
+    }
+
+    public void MoveRight()
+    {
+        if (movable)
+        {
+            Vector3 pos = this.transform.position;
+            pos.x += moveDistance;
+            this.transform.position = pos;
+            movable = false;
+        }
+        enemyCtr.EnemyMove();
+    }
+
+    public void MoveLeft()
+    {
+        if (movable)
+        {
+            Vector3 pos = this.transform.position;
+            pos.x -= moveDistance;
+            this.transform.position = pos;
+            movable = false;
+        }
+        enemyCtr.EnemyMove();
+    }
+
 }
