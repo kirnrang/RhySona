@@ -2061,7 +2061,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2102,6 +2102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movable: 0
   moveDistance: 1
+  targetPosition: {x: 0, y: 0, z: 0}
   Enemy: {fileID: 713603046}
 --- !u!58 &346923498
 CircleCollider2D:
@@ -2643,7 +2644,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -2683,7 +2684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 303ae7b84a6d4544fa5323c86ce28314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movedistance: 1
+  movedistance: 0.1
   chaseDistance: 4
   targetObj: {fileID: 346923494}
 --- !u!58 &713603050
@@ -3116,6 +3117,7 @@ GameObject:
   - component: {fileID: 1327840282}
   - component: {fileID: 1327840281}
   - component: {fileID: 1327840280}
+  - component: {fileID: 1327840285}
   m_Layer: 0
   m_Name: Boundary
   m_TagString: Untagged
@@ -4249,6 +4251,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1327840285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327840278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6808d92e77726664190cc919a4534add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1562594354
 GameObject:
   m_ObjectHideFlags: 0
@@ -4340,7 +4354,8 @@ GameObject:
   - component: {fileID: 1580712823}
   - component: {fileID: 1580712822}
   - component: {fileID: 1580712821}
-  m_Layer: 0
+  - component: {fileID: 1580712826}
+  m_Layer: 6
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4663,6 +4678,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1580712826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580712819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6808d92e77726664190cc919a4534add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1660568768
 GameObject:
   m_ObjectHideFlags: 0
@@ -4784,6 +4811,7 @@ GameObject:
   - component: {fileID: 1679858032}
   - component: {fileID: 1679858031}
   - component: {fileID: 1679858030}
+  - component: {fileID: 1679858035}
   m_Layer: 0
   m_Name: Trap
   m_TagString: Untagged
@@ -5135,6 +5163,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1679858035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679858028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c095e168fef189a41a3806b9691a91af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1723161315
 GameObject:
   m_ObjectHideFlags: 0
@@ -6287,7 +6327,8 @@ GameObject:
   - component: {fileID: 2126821287}
   - component: {fileID: 2126821286}
   - component: {fileID: 2126821285}
-  m_Layer: 0
+  - component: {fileID: 2126821290}
+  m_Layer: 7
   m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6550,6 +6591,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2126821290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126821283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968ca6eb5a2212d40a94e81b35b66f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
