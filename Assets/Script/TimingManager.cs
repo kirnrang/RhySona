@@ -9,6 +9,7 @@ public class TimingManager : MonoBehaviour
     [SerializeField] private GameObject PlayerObj = null;
     [SerializeField] Transform Center = null;
     [SerializeField] RectTransform[] timingRect = null;
+    [SerializeField] Vector3 boxNoteScale = new Vector3(1f, 1f, 1f);
     Vector2[] timingBoxs = null;
     PlayerControl playerCtr = null;
 
@@ -23,6 +24,15 @@ public class TimingManager : MonoBehaviour
         }
 
         playerCtr = PlayerObj.GetComponent<PlayerControl>();
+
+        SetBoxNoteSizes(boxNoteScale);
+    }
+    void SetBoxNoteSizes(Vector3 scale)
+    {
+        foreach (GameObject boxNote in boxNoteList)
+        {
+            boxNote.transform.localScale = scale;
+        }
     }
 
     public void CheckTiming()
