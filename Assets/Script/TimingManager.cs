@@ -6,9 +6,11 @@ public class TimingManager : MonoBehaviour
 {
 
     public List<GameObject> boxNoteList = new List<GameObject>();
+    [SerializeField] private GameObject PlayerObj = null;
     [SerializeField] Transform Center = null;
     [SerializeField] RectTransform[] timingRect = null;
     Vector2[] timingBoxs = null;
+    PlayerControl playerCtr = null;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,8 @@ public class TimingManager : MonoBehaviour
             timingBoxs[i].Set(Center.localPosition.x - timingRect[i].rect.width /2,
                             Center.localPosition.x + timingRect[i].rect.width /2);
         }
+
+        playerCtr = PlayerObj.GetComponent<PlayerControl>();
     }
 
     public void CheckTiming()
@@ -34,7 +38,7 @@ public class TimingManager : MonoBehaviour
                 {
                     boxNoteList[i].GetComponent<Note>().HideNote();
                     boxNoteList.RemoveAt(i);
-                    Debug.Log("Hit" + x);
+                    playerCtr.movable = true;
                     return;
                 }
             }
