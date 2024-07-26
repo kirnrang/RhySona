@@ -9,5 +9,10 @@ public class TrapTileAction : MonoBehaviour, ITileAction
         Debug.Log(" you reach trap tile");
         return true;
     }
+
+    public bool OnEnemyEnter(EnemyMovement enemy)
+    {
+        return true;
+    }
 }
 

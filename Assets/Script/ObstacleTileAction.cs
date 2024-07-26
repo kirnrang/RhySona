@@ -9,5 +9,10 @@ public class ObstacleTileAction : MonoBehaviour, ITileAction
         Debug.Log(" Movement blocked by obstacle");
         return false;
     }
+
+    public bool OnEnemyEnter(EnemyMovement enemy)
+    {
+        return false;
+    }
 }
 
