@@ -11,6 +11,8 @@ public class PlayerControl : MonoBehaviour
     public float moveDistance = 1.0f;
     public Vector3 targetPosition;
     [SerializeField] public GameObject[] enemyList = null;
+    public GameObject sonaPrefab = null;
+    private GameObject sona = null;
 
 
     private void Start()
@@ -28,6 +30,7 @@ public class PlayerControl : MonoBehaviour
             //게임 오버 효과를 위한 임시 코드
             Debug.Log("Game Over!");
             Time.timeScale = 0.0f;
+            this.gameObject.SetActive(false);
         }
     }
 
@@ -39,11 +42,16 @@ public class PlayerControl : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
+        if(sona !=null)
+        {
+            Destroy(sona);
+        }
         Vector3 pos = this.transform.position + direction * moveDistance;
         if (movable && HandleMove(pos))
         {
             this.transform.position = pos;
             movable = false;
+            sona = Instantiate(sonaPrefab, this.transform.position, Quaternion.identity);
         }
         playerMoved = true ;
         
