@@ -92,7 +92,7 @@ public class EnemyMovement : MonoBehaviour
         float distX = objectivePoint.x - this.transform.position.x;
         float distY = objectivePoint.y - this.transform.position.y;
 
-        if (Mathf.Abs(distX) > Mathf.Abs(distY))
+        if (Mathf.Abs(distX) >= Mathf.Abs(distY))
         {
             if (distX > 0 && IsMovable(this.transform.position + Vector3.right * movedistance))
             {
