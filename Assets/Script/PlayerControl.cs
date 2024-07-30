@@ -83,11 +83,6 @@ public class PlayerControl : MonoBehaviour
                 {
                     isDead = true;
                 }
-                //... 골이라면
-                else if (hit.collider.gameObject.layer == 7) 
-                {
-                    
-                }
                 //... 적이라면
                 else if(hit.collider.gameObject.layer== 9)
                 {
