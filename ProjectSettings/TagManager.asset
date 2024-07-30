@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Note
   - Enemy
+  - Sona
   layers:
   - Default
   - TransparentFX
