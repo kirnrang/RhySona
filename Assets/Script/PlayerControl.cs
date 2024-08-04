@@ -121,5 +121,5 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-
+    public bool gamecheck() { return isDead; }
 }
