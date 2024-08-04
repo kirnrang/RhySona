@@ -5,6 +5,7 @@ using UnityEngine;
 public class GoalTileAction : MonoBehaviour, ITileAction
 {
     [SerializeField] public GameObject[] enemyList = null;
+    [SerializeField] private GameObject menu = null;
 
     public bool OnPlayerEnter(PlayerControl player)
     {
@@ -14,6 +15,7 @@ public class GoalTileAction : MonoBehaviour, ITileAction
             //클리어 시 작동할 함수 작성
             Time.timeScale = 0;
             Debug.Log("Game Clear!");
+            menu.SetActive(true);
         }
         return true;
     }
