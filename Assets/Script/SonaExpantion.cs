@@ -11,7 +11,7 @@ public class SonaExpantion : MonoBehaviour
 
     public Vector3 sonaScale = new Vector3(0.35f, 0.35f, 0.35f );
     public float extandeTime = 0.5f;
-    public float fadeTime = 0.5f;
+    public float fadeTime = .5f;
 
     void Start()
     {
@@ -52,7 +52,6 @@ public class SonaExpantion : MonoBehaviour
         }
 
         spriteRenderer.color = targetColor;
-
     }
 
 }

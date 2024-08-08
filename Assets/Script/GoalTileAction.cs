@@ -7,7 +7,6 @@ public class GoalTileAction : MonoBehaviour, ITileAction
 {
     [SerializeField] public GameObject[] enemyList = null;
     [SerializeField] private GameObject menu = null;
-    private TilemapRenderer tilemapRenderer = null;
 
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private Vector3Int tilePosition; // 타일 위치
